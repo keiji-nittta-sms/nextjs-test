@@ -1,0 +1,44 @@
+.container {
+    max-width: 36rem;
+    padding: 0 1rem;
+    margin: 0rem auto 6rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_table{
+    width: 100%;
+}
+.item_box{
+    border: 1px solid black;
+}
+.backToHome {
+    margin: 3rem 0 0;
+}
+
+.row{
+    width: 100%;
+
+}
+.image{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    vertical-align: center;
+    background-color: #ccc;;
+}
+
+.two_cols{
+    display: flex;
+  }
+.left_col{
+    width: 600px;
+}
+.right_col{
+    width: calc(100% - 600px);
+}

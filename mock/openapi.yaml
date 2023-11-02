@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sample API
+  description: >-
+    bbbA sample API that uses a sample-site as an example to demonstrate features in
+    the OpenAPI 3.0 specificationa
+servers:
+  - url: 'http://localhost:8003'
+#Prism Mockサーバーはこのファイル以外の変更を検知してくれないためMockとしての記述はこちらに記載
+paths:
+
+  /users:
+    get:
+      description: >
+        Returns all users
+      operationId: findUsers
+      parameters:
+        - name: tags
+          in: query
+          description: tags to filter by
+          required: false
+          style: form
+          schema:
+            type: array
+            items:
+              type: string
+        - name: limit
+          in: query
+          description: maximum number of results to return
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: user response
+          content:
+            application/json:
+              type: array
+              schema:
+                $ref: "./users/schema.yaml"
+              example:
+                - id: 1
+                  name: "山田太郎2"
+                  age: 20
+                  hobby: "映画鑑賞"
+                  address: "東京都Hogehoge"
+                  phone_number: "090-0000-0000"
+                  email: "hoge@bm-sms.co.jp"
+                  image: "user.png"
+                  comment: "あ１２３４５６７８９０あ１２３４５６７８９０あ１２３４５６７８９０あ１２３４５６７８９０あ１２３４５６７８９０あ１２３４５６７８９０"
+                  status: "inactive"
+                - id: 3
+                  name: "山田次郎"
+                  age: 23
+                  hobby: "サッカー"
+                  address: "東京都Hogehoge"
+                  phone_number: "090-0000-0000"
+                  email: "hoge@bm-sms.co.jp"
+                  image: "user.png"
+                  comment: "い１２３４５６７８９０い１２３４５６７８９０い１２３４５６７８９０い１２３４５６７８９０い１２３４５６７８９０い１２３４５６７８９０い１２３４５６７８９０"
+                  status: "inactive"
+                - id: 4
+                  name: "山田三郎"
+                  age: 30
+                  hobby: "読書"
+                  address: "北海道Hogehoge"
+                  phone_number: "090-0000-0000"
+                  email: "hoge@bm-sms.co.jp"
+                  image: "user.png"
+                  comment: "うううううううううううううううううう"
+                  status: "inactive"
+
+
+#externalDocs:
+#  description: "Find out more about Swagger"
+#  url: "http://swagger.io"

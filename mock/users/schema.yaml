@@ -1,0 +1,80 @@
+
+
+
+components:
+  definitions:
+    User:
+      type: "object"
+      required:
+        - "name"
+      properties:
+        id:
+          type: "integer"
+          format: "int64"
+        name:
+          type: "string"
+        age:
+          type: "int"
+        hobby:
+          type: "string"
+        address:
+          type: "string"
+        phone_number:
+          type: "string"
+        email:
+          type: "string"
+        image:
+          type: "string"
+        comment:
+          type: "string"
+        status:
+          type: "string"
+          description: "user status"
+          enum:
+            - "pending"
+            - "active"
+            - "inactive"
+  schemas:
+    User:
+      type: "object"
+      required:
+        - "name"
+      properties:
+        id:
+          type: "integer"
+          format: "int64"
+          example: 101
+        name:
+          type: "string"
+          example: "Tyro"
+        age:
+          type: "integer"
+        hobby:
+          type: "string"
+        address:
+          type: "string"
+        phone_number:
+          type: "string"
+        email:
+          type: "string"
+        image:
+          type: "string"
+        comment:
+          type: "string"
+        status:
+          type: "string"
+          description: "user status"
+          enum:
+            - "pending"
+            - "active"
+            - "inactive"
+    Error:
+      type: "object"
+      properties:
+        code:
+          type: "integer"
+          format: "int32"
+        type:
+          type: "string"
+        message:
+          type: "string"

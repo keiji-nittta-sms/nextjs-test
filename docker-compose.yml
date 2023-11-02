@@ -1,0 +1,56 @@
+version: '3.7'
+
+services:
+  nextjs:
+    build:
+      context: ./docker/node
+    volumes:
+      - ./src/:/usr/src/app
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+
+    environment:
+       NODE_ENV: local
+    tty: true
+    networks:
+      - default
+  
+
+  swagger-editor:
+    image: swaggerapi/swagger-editor
+    container_name: "swagger-editor"
+    ports:
+      - "8001:8080"
+    networks:
+      - default
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: "swagger-ui"
+    ports:
+      - "8002:8080"
+    volumes:
+      - ./mock/:/opt/
+    environment:
+      SWAGGER_JSON: /opt/openapi.yaml
+    networks:
+      - default
+
+  swagger-api:
+    image: stoplight/prism:latest
+    container_name: "swagger-api"
+    ports:
+      - "8003:4010"
+    command: mock  -h 0.0.0.0 /opt/openapi.yaml
+    user: root
+    volumes:
+      - ./mock/:/opt/
+    networks:
+      - default
+
+
+
+
+networks:
+  default:

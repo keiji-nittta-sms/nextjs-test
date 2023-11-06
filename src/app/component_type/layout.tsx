@@ -18,7 +18,10 @@ export default function RootLayout({children, params}) {
                     <li>
                         <Link href={'/component_type/client_component'}> Client Componentによるリスト出力 </Link>
                     </li>
-                  　
+                    <li>
+                        <Link href={'/component_type/script_execute'}>Client Componentでのリアクティブな処理</Link>
+                    </li>
+
 
                 </ul>
 

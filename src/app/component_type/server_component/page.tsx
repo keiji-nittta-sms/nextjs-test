@@ -15,7 +15,9 @@ export default async function Home() {
     const users: user_type[] = (await result.json());
 
     return (
-        <table style={{border: "1px solid black"}}>
+<>
+    サーバーコンポーネントを使った場合、初期表示はサーバー描画されるため
+    <table style={{border: "1px solid black"}}>
             <thead>
             <tr>
                 <th>id</th>
@@ -36,6 +38,7 @@ export default async function Home() {
             })}
             </tbody>
         </table>
+</>
     );
 }
 

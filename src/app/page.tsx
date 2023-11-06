@@ -2,8 +2,7 @@ import Link from "next/link";
 import React from "react";
 import fs from 'fs'
 export default async function Home() {
-  const dir= fs.readdirSync(process.cwd())
-  console.log(dir)
+
   return (
     <div>
       <h1>基本サンプル</h1>
@@ -37,6 +36,12 @@ export default async function Home() {
           <Link href="/cta">訴求用モーダル再現</Link>
 
         </li>
+          {/*<li>*/}
+          {/*  <Link href={'/script_execute'}>HTML直接描画</Link>*/}
+          {/*</li>*/}
+          {/*<li>*/}
+          {/*  <Link href={'/script_execute2'}>外部スクリプト実行</Link>*/}
+          {/*</li>*/}
       </ul>
     </div>
   );

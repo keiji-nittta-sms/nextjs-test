@@ -11,11 +11,19 @@ interface user_type {
 
 
 
-export default    function List(props) {
-  　
+export default    function List() {
+    let    [users,setUsers]=useState([])
 
-    const [users,setUsers]=useState([props.users[0] ]  )
-   　const clickEv= ()=>  setUsers(props.users)
+    const clickEv=   function (){
+        fetch(`http://localhost:8003/users`)
+            .then((res:Response)=> {
+                 return res.json()
+            }).then(  (data)=>{
+            console.log (  data)
+
+            return setUsers(data)
+        } )
+    }
 
     return (
         <>

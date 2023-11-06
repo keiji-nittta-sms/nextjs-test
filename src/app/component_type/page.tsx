@@ -5,14 +5,11 @@ export default async function Home() {
     return (
     <div>
       <p>
-        App
-        Routerでは、基本的にパス＝Appディレクトリ以下のディレクトリ構造となる
-        <br />
-        各ディレクトリのpage.tsxファイルが各ルートの実態になっている
-        <br />
-        現在のディレクトリは/app/simple_page/page.tsx
+        App RouterではReact.jsのServer Componentという仕組みを利用しているため、通常状態では初期ロードはサーバー描画され、画面上でのアクション（画面遷移など）はクライアント側で描画される。
+        <br />(F12ツールで見るとわかりやすい)
+        <br />また、従来のReactで行われるリアクティブな処理はServer Componentには記載できないため、.jsx/.tsxファイル先頭で"use client"を宣言する必要がある
       </p>
-      <Link href="/simple_page/page1/"> ページ1に移動（/app/simple_page/<span style={{color: 'red'} }>page1/page.tsx）</span> </Link>
+
      </div>
   );
 }
